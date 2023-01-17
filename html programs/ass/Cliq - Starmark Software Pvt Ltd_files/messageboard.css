@@ -1,0 +1,1194 @@
+/* $Id$ */
+
+.micsDiv {
+  font-size: 12px;
+  position: fixed;
+  z-index: 10000000;
+}
+
+.micshidden {
+  cursor: pointer;
+  overflow:hidden;
+}
+
+
+.micsBox{
+	transition:200ms;
+}
+
+.micshidden .micsBox{
+	opacity:0;
+}
+
+.micswrap{
+  white-space:nowrap;
+}
+
+.micscontent{
+  overflow:hidden;
+}
+
+.micscontent * {
+  display: inline-block;
+}
+
+.micsiframeDiv{
+  display:none;
+}
+
+.micscontent a {
+  text-decoration: none;
+}
+.micscontent a:hover {
+  text-decoration: underline;
+}
+
+.micsheader {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.micstoggle {
+  cursor: pointer;
+}
+.micstoggle:before {
+  content: " Hide ";
+}
+
+.micsaction {
+  font-size: 10px;
+}
+
+.micsaction > * {
+  padding: 3px;
+}
+
+.micsaction > *:hover {
+  transform:scale(1.1);
+  font-weight:bold;
+}
+
+.micsclose {
+  cursor: pointer;
+}
+
+.micsclose:before {
+  content: " Close ";
+}
+
+.micscloseSymbol:before {
+  content: " X  ";
+}
+
+.micstoggleSymbol:before{
+  content:" V ";
+  display:inline-block;
+}
+
+.micsTop .micstoggleSymbol:before{
+  transform:rotate(180deg);
+}
+
+.micsLeft .micstoggleSymbol:before{
+  transform:rotate(90deg);
+}
+
+.micsRight .micstoggleSymbol:before{
+  transform:rotate(270deg);
+}
+
+
+
+.micsTop {
+  top: 0;
+  left: 0;
+  border-bottom: 4px solid;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+.micsTop.micshddn {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+
+.micsBottom {
+  bottom: 0;
+  left: 0;
+  border-top: 4px solid;
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+.micsBottom .micsarw {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.micsBottom.micshddn {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+
+.micsTop, .micsBottom {
+  width: 100%;
+}
+.micsTop.micshidden, .micsBottom.micshidden {
+  min-height: 0px;
+  height: 0px;
+}
+
+.micsTop.micshidden:hover, .micsBottom.micshidden:hover {
+  min-height: 15px;
+  height: 15px;
+}
+
+.micsTop .micsBox, .micsBottom .micsBox {
+  min-height:30px;
+  margin: 3px;
+  padding: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.micsTop .micsimage, .micsBottom .micsimage {
+  -webkit-box-flex: auto;
+      -ms-flex: auto;
+          flex: auto;
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
+	text-align:center;
+}
+.micsTop .micsimage img, .micsBottom .micsimage img {
+  width: 50px;
+  height: 25px;
+}
+.micsTop .micsaction, .micsBottom .micsaction {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  -webkit-box-flex: 2;
+      -ms-flex: 2 10px;
+          flex: 2 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+.micsTop .micsheader, .micsBottom .micsheader {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 auto;
+          flex: 1 auto;
+}
+
+.micsTop .micsinner, .micsBottom .micsinner {
+  -webkit-box-flex: 100;
+      -ms-flex: 100 auto;
+          flex: 100 auto;
+}
+
+
+.micsTop .micscontent, .micsBottom .micscontent {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  -webkit-box-flex: 20;
+      -ms-flex: 20;
+          flex: 20;
+  text-align: center;
+  display:flex;
+  align-items:center;
+  flex-flow:row wrap;
+}
+.micsTop .micsinner > *, .micsBottom .micsinner > * {
+  padding: 0px 2px;
+}
+
+.micsLeft .micscontent > *, .micsRight .micscontent > * {
+  padding: 2px 10px;
+}
+
+
+
+.micsLeft, .micsRight {
+  width: 400px;
+  margin: 0;
+  padding: 0;
+}
+.micsLeft.micshidden, .micsRight.micshidden {
+  min-width: 0px;
+  width: 0px !important;
+}
+
+.micsLeft.micshidden:hover, .micsRight.micshidden:hover {
+  min-width: 15px;
+  width: 15px;
+}
+
+.micsLeft .micsBox, .micsRight .micsBox {
+  padding: 10px;
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+.micsLeft .micsimage, .micsRight .micsimage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: auto;
+      -ms-flex: auto;
+          flex: auto;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+.micsLeft .micsimage img, .micsRight .micsimage img {
+  width: 50px;
+  height: 20px;
+}
+.micsLeft .micsclose, .micsRight .micsclose {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+.micsLeft .micstoggle, .micsRight .micstoggle {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+.micsLeft .micsaction, .micsRight .micsaction {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  -webkit-box-flex:auto;
+      -ms-flex:auto;
+          flex:auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-decoration: none;
+  text-align: center;
+}
+.micsLeft .micscontent, .micsRight .micscontent {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  -webkit-box-flex: 10;
+      -ms-flex: 10 265px;
+          flex: 10 265px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: center;
+}
+
+
+.micsLeft .micsdesc,.micsRight .micsdesc{
+	padding-right:5px;
+}
+
+
+.micsRight {
+  right: 0;
+  bottom: 200px;
+  border-left: 4px solid;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+.micsRight .micsarw {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.micsRight.micshddn {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+.micsRight .micsaction {
+  text-align: right;
+}
+
+.micsLeft {
+  left: 0;
+  bottom: 200px;
+  border-right: 4px solid;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+.micsLeft .micsarw {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+.micsLeft.micshddn {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+.micsLeft .micsimage {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+}
+.micsLeft .micsaction {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  text-align: left;
+}
+
+.micsdark {
+  background-color: #42464c;
+  color: #f8f8f8;
+  border-color: #f1703b;
+}
+.micsdark .micsclose {
+  color: #fff;
+}
+.micsdark .micscontent a {
+  color: steelblue;
+  opacity:0.9;
+  transition: .25s ease-in-out;
+}
+
+.micsdark .micscontent a:hover {
+  opacity:1;
+  transform:scale(1.02);
+}
+
+
+.micsdark .micsarw circle {
+  fill: #ab8063;
+}
+.micsdark .micsarw path {
+  fill: #42464c;
+}
+
+
+    .micshide{
+         display:none;
+    }
+
+   .micsTop.bannerhide,.micsBottom.bannerhide{
+	transform:scaleY(0);
+    }
+
+   .micsLeft.bannerhide,.micsRight.bannerhide{
+        transform:scaleX(0);
+    }
+
+   #mics_tpDiv .clx {
+            position: fixed;
+            top: 0px;
+            right: 0px;
+        width:50px;height:50px;color:white !important;
+            transition: transform .45s ease-in-out;
+    
+        }
+    
+    #micsbackdrop{
+        position:fixed;
+          width:100%;
+          height:100%;
+        top:0;left:0;bottom:0;right:0;
+          background-color: rgba(0,0,0,0.5);
+          z-index:10000001;         
+    }
+
+    #mics_tpDiv{
+            position:absolute;
+        top:175px;
+            width:50%;
+            left:30%;
+        width: 250px;
+        min-height: 100px;
+              z-index: 10000002;
+	box-sizing:border-box;
+    }
+
+ 
+
+    .clx:hover {
+        transition: 0.8s ease;
+        opacity:1;
+        cursor:pointer;
+    }
+.clx:before {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 13px;
+    height: 0;
+    border-top: 2px solid #000;
+    transform: rotate(45deg);
+    transform-origin: center;
+}
+.clx:after {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 13px;
+    height: 0;
+    border-top: 2px solid #000;
+    transform: rotate(-45deg);
+    transform-origin: center;
+}
+ 
+ #mics_tpDiv .clx:before {
+    width:20px;
+    border-top: 3px solid #ddd;
+ }
+ 
+ #mics_tpDiv iframe{
+    border:none;
+ }
+ 
+ #mics_tpDiv .clx:after {
+     width:20px;
+    border-top: 3px solid #ddd;
+ }
+ 
+.clx-txt{
+    font-size:11px;
+    opacity:0.8;
+    float:right;
+    position:relative;
+    top:3px;
+}
+ 
+.clx-txt:hover{
+    opacity:1;
+    cursor:pointer;
+}
+
+ 
+.micsloading:after {
+  content: ' .';
+  animation: micsdots 1s steps(5, end) infinite;
+}
+ 
+@keyframes micsdots {
+  0%, 20% {
+    color: rgba(0,0,0,0);
+    text-shadow:
+      .25em 0 0 rgba(0,0,0,0),
+      .5em 0 0 rgba(0,0,0,0);}
+  40% {
+    color: white;
+    text-shadow:
+      .25em 0 0 rgba(0,0,0,0),
+      .5em 0 0 rgba(0,0,0,0);}
+  60% {
+    text-shadow:
+      .25em 0 0 white,
+      .5em 0 0 rgba(0,0,0,0);}
+  80%, 100% {
+    text-shadow:
+      .25em 0 0 white,
+      .5em 0 0 white;}
+}
+
+
+
+
+/*$Id$*/
+
+.optionmsgRoot {
+  position: relative;
+  color: #444;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 12px;
+  margin-top: 16px 0px !important;
+}
+
+.optionmsgRoot > #inlabel[labeltrans="low"] {
+  position: absolute;
+  line-height: 20px;
+  left: 0px;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  top: 20px;
+  -webkit-transform-origin: top left;
+  transform-origin: top left;
+  white-space: nowrap;
+  pointer-events: none;
+  font-size: 16px;
+  min-height: 8px;
+  color: black;
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+
+.optionmsgRoot > #inlabel[labeltrans="high"] {
+  position: absolute;
+  line-height: 20px;
+  left: 0px;
+  top: -4px;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-transform-origin: top left;
+  transform-origin: top left;
+  white-space: nowrap;
+  pointer-events: none;
+  font-size: 12px !important;
+  min-height: 8px;
+  color: rgb(41, 39, 39);
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+
+.optionmsgRoot > .chipinputsend {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+
+.optionmsgRoot > .chipinputsend > .chipinput {
+  display: flex;
+  position: relative;
+  width: 85%;
+  align-items: center;
+  flex-direction: row;
+  padding: 5px;
+  padding-left: 0px;
+}
+
+.optionmsgRoot > .chipinputsend > .chipinput > #selectedoption > .chip {
+  position: relative;
+  display: inline-flex;
+  font-size: 15px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  padding-right: 14px;
+  border-radius: 2px;
+  height: 22px;
+  background: #d8edff;
+  user-select: none;
+  overflow: hidden;
+  color: #343434;
+}
+.optionmsgRoot
+  > .chipinputsend
+  > .chipinput
+  > #selectedoption
+  > .chip
+  > #chipclose {
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #ededed;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: red;
+  visibility: hidden;
+}
+
+.optionmsgRoot
+  > .chipinputsend
+  > .chipinput
+  > #selectedoption
+  > .chip:hover
+  > #chipclose {
+  visibility: visible;
+}
+
+.optionmsgRoot
+  > .chipinputsend
+  > .chipinput
+  > #selectedoption
+  > .chip
+  > #chipclose:hover {
+  background: #ededed;
+}
+
+.optionmsgRoot > .chipinputsend > .chipinput > #search {
+  width: 100%;
+  line-height: 20px;
+  outline: none;
+  border: none;
+  align-self: center;
+  font-size: 18px;
+  padding-left: 5px;
+  background-color: transparent;
+  font: inherit;
+}
+
+.optionmsgRoot > .chipinputsend > .chipinput > #search:focus {
+  caret-color: #1976d2 !important;
+}
+
+.optionmsgRoot > .chipinputsend > #arrow[col="black"] {
+  position: absolute;
+  right: 8.5vw;
+  align-self: center;
+  display: inline-flex;
+  line-height: 1;
+  transition: all 0.5s;
+  color: grey !important;
+}
+
+.optionmsgRoot > .chipinputsend > #arrow[col="blue"] {
+  position: absolute;
+  right: 8.5vw;
+  transform: rotate(180deg);
+  transition: transform 0.5s ease;
+  color: rgb(72, 143, 239);
+  align-self: center;
+  display: inline-flex;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.optionmsgRoot > .chipinputsend > #send {
+  position: absolute;
+  right: 0vw;
+  font-size: 24px;
+  color: rgb(72, 143, 239);
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  cursor: pointer;
+}
+
+.optionmsgRoot > #line[col="black"] {
+  width: 91%;
+  border: 0.8px solid rgb(185, 185, 185);
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+
+.optionmsgRoot > #line[col="blue"] {
+  width: 91%;
+  border: 0.8px solid rgb(72, 143, 239);
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+
+.optionmsgRoot > .valueList {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 2px);
+  width: 91%;
+  background: white;
+  border-radius: 0 0 0.25vw 0.25vw;
+  font-size: 16px;
+  z-index: 10;
+  max-height: 300px;
+  display: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%),0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+  box-sizing: border-box;
+}
+
+.optionmsgRoot > .valueList > .listItem {
+  height: 1.5vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.optionmsgRoot > .valueList > .valueListItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px;
+  user-select: none;
+}
+
+.optionmsgRoot > .valueList > .valueListItem:hover {
+  background: #f5f5f5;
+}
+
+.optionmsgRoot > .valueList > .valueListItem:active {
+  background: #d1d1d1 !important;
+  transition: background 150ms ease-in-out;
+}
+
+.optionmsgRoot > .valueList[col="blue"],
+.optionmsgRoot > .valueList:hover {
+  display: flex;
+  flex-direction: column;
+}
+
+/*$Id$*/
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0px;
+}
+button {
+  outline: none;
+  border: none;
+}
+
+#primarypanel {
+  position: relative;
+  height: 100%;
+}
+
+#primarypanel > #newmessagectr {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#primarypanel > #newmessagectr > .topbandctr > .valuesctr {
+  position: relative;
+  display: inline-flex;
+  width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  align-items: center;
+  justify-content: space-between !important;
+  font-weight: inherit;
+}
+
+#primarypanel > #newmessagectr > .topbandctr > .valuesctr > .headtext {
+  font-weight: inherit;
+  line-height: 1 !important;
+  letter-spacing: 0.02em !important;
+}
+
+#primarypanel > #newmessagectr > .topbandctr > .valuesctr > .close {
+  padding: 6px;
+  margin: 6px;
+  background-color: inherit;
+  border-radius: 50%;
+}
+
+#primarypanel > #newmessagectr > #newmessages {
+  height: 100%;
+}
+
+#primarypanel > #newmessagectr > #newmessages > .selectbox {
+  height: 70px;
+  max-width: 250px;
+  padding-left: 16px !important;
+  padding-top: 16px !important;
+}
+
+#primarypanel
+  > #newmessagectr
+  > #newmessages
+  > .selectbox
+  > #genreselectcontainer {
+  position: absolute;
+  padding: 0px 12px;
+  text-align: center;
+  background: rgb(243, 243, 243);
+  width: 234px;
+  height: 30px;
+  min-height: 48px;
+  z-index: 1;
+}
+#primarypanel
+  > #newmessagectr
+  > #newmessages
+  > .selectbox
+  > #genreselectcontainer
+  > #showgenreselect {
+  display: inline-flex;
+  width: 200px;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+#primarypanel
+  > #newmessagectr
+  > #newmessages
+  > .selectbox
+  > #genreselectcontainer
+  > #selectoptcontainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  left: -12px;
+  top: -48px;
+  width: 234px;
+  text-align: center;
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%),0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+  box-sizing: border-box;
+  max-height: 300px;
+  overflow: auto;
+  cursor: pointer;
+}
+
+#primarypanel
+  > #newmessagectr
+  > #newmessages
+  > .selectbox
+  > #genreselectcontainer
+  > #selectoptcontainer
+  > .genreselectoption {
+  display: inline-flex;
+  height: 40px;
+  font-size: 16px;
+  padding: 10px 0px;
+  cursor: pointer;
+}
+#primarypanel
+  > #newmessagectr
+  > #newmessages
+  > .selectbox
+  > #genreselectcontainer
+  > #selectoptcontainer
+  > .genreselectoption
+  > #doneicon {
+  padding: 0px 10px;
+  font-size: 18px;
+  color: black;
+}
+#primarypanel
+  > #newmessagectr
+  > #newmessages
+  > .selectbox
+  > #genreselectcontainer
+  > #selectoptcontainer
+  > .genreselectoption
+  > #doneicon[tickcolor="white"] {
+  padding: 0px 10px;
+  font-size: 18px;
+  color: transparent;
+}
+
+#primarypanel
+  > #newmessagectr
+  > #newmessages
+  > .selectbox
+  > #genreselectcontainer
+  > #selectoptcontainer
+  > .genreselectoption
+  > .genreitem {
+  margin-left: 10px;
+}
+
+#primarypanel
+  > #newmessagectr
+  > #newmessages
+  > .selectbox
+  > #genreselectcontainer
+  > #selectoptcontainer
+  > .genreselectoption
+  > .genreselectoption:hover {
+  background: #d2d2d22e;
+}
+
+#primarypanel > #newmessagectr > #newmessages > .msgcontainer {
+  overflow: auto;
+  height: calc(100% - 70px);
+  position: absolute;
+  line-height: 1.5;
+}
+
+#primarypanel > #newmessagectr > #newmessages > .msgcontainer > #historynotify {
+  text-align: right !important;
+}
+
+#primarypanel
+  > #newmessagectr
+  > #newmessages
+  > .msgcontainer
+  > #historynotify
+  > #tabpanel {
+  text-transform: none;
+  padding: 0px 16px;
+  margin: 6px 8px;
+  height: 36px;
+  border-radius: 2px;
+  background-color: inherit;
+}
+
+#primarypanel > #newmessagectr > #newmessages > #emptypanel {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+#primarypanel
+  > #newmessagectr
+  > #newmessages
+  > #emptypanel
+  > #nodataicon
+  > span {
+  font-size: 60px;
+}
+
+#primarypanel > #newmessagectr > #newmessages > #emptypanel > #nodatatexthead {
+  padding: 4px 0px !important;
+  font-weight: 400;
+  text-align: center;
+}
+
+#primarypanel
+  > #newmessagectr
+  > #newmessages
+  > #emptypanel
+  > #nodatatextdescription {
+  padding: 8px !important;
+  font-weight: 400;
+  text-align: center;
+}
+
+#primarypanel
+  > #newmessagectr
+  > #newmessages
+  > #emptypanel
+  > #historybtnctr
+  > #historybutton {
+  position: relative;
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+  padding: 0px 16px;
+  align-items: center;
+  border-radius: 2px;
+  display: inline-flex;
+  height: 36px;
+  flex: 0 0 auto;
+  font-weight: 500;
+  justify-content: center;
+  margin: 6px 8px;
+  min-width: 88px;
+  outline: 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1), color 1ms;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  will-change: box-shadow;
+}
+
+#primarypanel
+  > #newmessagectr
+  > #newmessages
+  > #emptypanel
+  > #historybtnctr
+  > #historybutton:hover {
+  opacity: 0.9;
+}
+
+#primarypanel
+  > #newmessagectr
+  > #newmessages
+  > #emptypanel
+  > #historybtnctr
+  > #historybutton:active {
+  opacity: 0.8;
+  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%),0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1), color 1ms;
+}
+
+#primarypanel > #oldmessagectr {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#primarypanel > #oldmessagectr > .topbandctr > .valuesctr {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+#primarypanel > #oldmessagectr > .topbandctr > .valuesctr > #backicon {
+  margin-left: 10px;
+  padding: 0px 6px;
+  height: 34px;
+  background-color: inherit;
+  border-radius: 50%;
+}
+
+#primarypanel > #oldmessagectr > .topbandctr > .valuesctr > .historytopband {
+  position: relative;
+  display: inline-flex;
+  width: 100%;
+  height: 56px;
+  padding-right: 16px;
+  padding-left: 6px;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: inherit;
+}
+
+#primarypanel
+  > #oldmessagectr
+  > .topbandctr
+  > .valuesctr
+  > .historytopband
+  > .headtext {
+  font-weight: inherit;
+  line-height: 1 !important;
+  letter-spacing: 0.02em !important;
+}
+
+#primarypanel
+  > #oldmessagectr
+  > .topbandctr
+  > .valuesctr
+  > .historytopband
+  > .close {
+  padding: 6px;
+  margin: 6px;
+  background-color: inherit;
+  border-radius: 50%;
+}
+
+#primarypanel > #oldmessagectr > #oldmessages {
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+}
+
+#primarypanel > #oldmessagectr > #oldmessages > #oldmessagepanel {
+  height: 100%;
+  overflow: auto;
+  min-height: 80vh;
+}
+
+#primarypanel
+  > #newmessagectr
+  > #newmessages
+  > .selectbox
+  > #genreselectcontainer
+  > #selectoptcontainer
+  > .genreselectoption:hover {
+  background-color: #00000010;
+}
+#primarypanel > #newmessagectr > .topbandctr > .valuesctr > .close:hover,
+#primarypanel
+  > #newmessagectr
+  > #newmessages
+  > .msgcontainer
+  > #historynotify
+  > #tabpanel:hover,
+#primarypanel > #oldmessagectr > .topbandctr > .valuesctr > #backicon:hover,
+#primarypanel
+  > #oldmessagectr
+  > .topbandctr
+  > .valuesctr
+  > .historytopband
+  > .close:hover {
+  background-color: #00000017;
+  transition: 0.5s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+.ripple {
+  color: inherit;
+  border-radius: inherit;
+  position: absolute;
+  cursor:pointer;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  z-index: 0;
+  contain: strict;
+}
+.ripple:active {
+  background-color: #00000030;
+  opacity: 0.8;
+  transition: background 150ms ease-in-out;
+}
+.rip {
+  cursor: pointer !important;
+}
+
+.rip:active {
+  background: #00000030 !important;
+  transition: background 150ms ease-in-out;
+}
+
